@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- saved from url=(0051)https://getbootstrap.com/docs/4.0/examples/sign-in/ -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -17,6 +16,20 @@
   </head>
 
   <body class="text-center">
+    <?php
+      $servername = "localhost";
+      $username = "login-admin";
+      $passsword = "MTHSP1@3";
+
+      //Create connection
+      $conn = new mysqli($servername, $username, $password);
+
+      if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+      }
+      echo "Connected successfully";
+    ?>
+
     <form class="form-signin">
       <img class="mb-4" src="vapor.png" alt="" width="200" height="200">
       <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
@@ -34,4 +47,5 @@
     </form>
 
 
-</body></html>
+  </body>
+</html>
