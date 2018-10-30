@@ -19,7 +19,7 @@
     <?php
       $servername = "localhost";
       $username = "login-admin";
-      $passsword = "MTHSP1@3";
+      $password = "MTHSP1@3";
 
       //Create connection
       $conn = new mysqli($servername, $username, $password);
