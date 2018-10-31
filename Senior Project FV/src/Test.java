@@ -1,12 +1,12 @@
 
 import java.io.IOException;
 
-import org.jsoup.HttpStatusException;
 import org.jsoup.Jsoup;
-import org.jsoup.helper.Validate;
 import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 
 public abstract class Test {
 
@@ -46,11 +46,6 @@ public abstract class Test {
 		System.out.println("Things work!");
 	}
 	
-	public static void cool() throws IOException {
-		Document docu = Jsoup.connect("https://rpcs3.net").get();
-		System.out.println(docu.title()+":");
-	}
-	
 	public static void cities(int l) throws IOException {
 		try {
 		while(l != 1202) {
@@ -58,7 +53,8 @@ public abstract class Test {
 			String citi = docum.title();
 			String[] citiName = citi.split(",");
 			String cities = citiName[0];
-			System.out.println(cities + ": "+l);
+			System.out.println(cities + ": "+String.format("%04d", l));
+			writer(cities+": "+String.format("%04d", l));
 			l++;
 			
 		}
@@ -68,5 +64,41 @@ public abstract class Test {
 		}
 
 	}
+	
+	public static void writer(String popcorn) throws IOException {
+		
+		String FILENAME = "test\\cities.txt";
+		
+		BufferedWriter bw = null;
+		FileWriter fw = null;
+		fw = new FileWriter(FILENAME, true);
+		bw = new BufferedWriter(fw);
+		
+		try {
+			String content = popcorn;
+			
+			bw.write(content);
+			bw.newLine();
+			
+			System.out.println("Done");
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
 
+			try {
+
+				if (bw != null)
+					bw.close();
+
+				if (fw != null)
+					fw.close();
+
+			} catch (IOException ex) {
+
+				ex.printStackTrace();
+
+			}
+		}
+	}
 }
