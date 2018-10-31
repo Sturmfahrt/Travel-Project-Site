@@ -70,6 +70,7 @@ public abstract class Test {
 		}
 		} catch (org.jsoup.HttpStatusException e) {
 			l++;
+			System.out.println("THERE WAS A GAP HERE!");
 			cities(l);
 		}
 
