@@ -12,7 +12,7 @@ public abstract class Test {
 
 	public static void main(String[] args) throws IOException {
 		
-		//cities(1);
+		cities(1);
 		
 		Document doc = Jsoup.connect("https://weather.com/weather/tenday/l/Davie+FL+USFL0577:1:US").get(); //highest number for Florida is 1201
 		//connects to the web page
@@ -64,7 +64,7 @@ public abstract class Test {
 			String[] citiName = citi.split(",");
 			String cities = citiName[0];
 			System.out.println(cities + ": "+String.format("%04d", l));
-			//writer(cities+": "+String.format("%04d", l));
+			writer(cities,String.format("%04d", l));
 			l++;
 			
 		}
@@ -76,7 +76,7 @@ public abstract class Test {
 
 	}
 	
-	public static void writer(String popcorn) throws IOException { //writes stuff into a text file
+	public static void writer(String popcorn, String max) throws IOException { //writes stuff into a text file
 		
 		String FILENAME = "test\\cities.txt";
 		
@@ -89,6 +89,8 @@ public abstract class Test {
 			String content = popcorn;
 			
 			bw.write(content);
+			bw.newLine();
+			bw.write(max);
 			bw.newLine();
 			
 			System.out.println("Done");
