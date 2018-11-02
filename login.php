@@ -6,7 +6,7 @@
     <meta name="author" content="">
     <link rel="icon" href="https://getbootstrap.com/favicon.ico">
 
-    <title>Signin Template for Bootstrap</title>
+    <title>Signin</title>
 
     <!-- Bootstrap core CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
@@ -43,7 +43,7 @@
         </label>
       </div>
       <button class="btn btn-lg btn-primary btn-block custom-btn" type="submit">Sign in</button>
-      <p class="mt-5 mb-3 text-muted">© 2017-2018</p>
+      <p class="mt-5 mb-3 text-muted">Login Page currently not functional.</p>
     </form>
 
 
