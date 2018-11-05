@@ -4,9 +4,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="https://getbootstrap.com/favicon.ico">
+    <link rel="icon" href="vapor.png">
 
-    <title>Signin Template for Bootstrap</title>
+    <title>Signin</title>
 
     <!-- Bootstrap core CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
@@ -27,7 +27,6 @@
       if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
       }
-      echo "Connected successfully";
     ?>
 
     <form class="form-signin">
@@ -43,7 +42,7 @@
         </label>
       </div>
       <button class="btn btn-lg btn-primary btn-block custom-btn" type="submit">Sign in</button>
-      <p class="mt-5 mb-3 text-muted">© 2017-2018</p>
+      <p class="mt-5 mb-3 text-muted">Login Page currently not functional.</p>
     </form>
 
 
