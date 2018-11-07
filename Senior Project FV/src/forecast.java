@@ -6,7 +6,7 @@ import org.jsoup.select.Elements;
 public class forecast {
 	public static void weather() throws IOException {
 
-		Document doc = Jsoup.connect("https://weather.com/weather/tenday/l/Davie+FL+USFL0577:1:US").get(); //highest number for Florida is 1201
+		Document doc = Jsoup.connect("https://weather.com/weather/tenday/l/Davie+FL+USFL0316:1:US").get(); //highest number for Florida is 1201
 		//connects to the web page
 		
 		Elements temp = doc.select(".temp span");
