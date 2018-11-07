@@ -5,8 +5,8 @@ public abstract class Test {
 
 	public static void main(String[] args) throws IOException {
 
-		//forecast.weather(); 
-		findNWrite();
+		forecast.weather(); 
+		//findNWrite();
 	}
 	
 	

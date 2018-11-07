@@ -11,5 +11,8 @@ public class Areas {
 		Document yelp = Jsoup.connect("https://www.yelp.com/search?find_desc=Things+To+Do&find_loc="+loc+"%2C+FL+32145").get();
 	}
 
+	public static void food(String loca) throws IOException {
+		Document tasty = Jsoup.connect("https://www.yelp.com/search?find_desc=Restaurants&find_loc="+loca+"%2C%20FL%2032145").get();
+	}
 }
 

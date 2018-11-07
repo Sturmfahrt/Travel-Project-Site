@@ -45,32 +45,28 @@ public class writer {
 		}
 	}
 	
-	public static void writeDataForCustomSeperatorCSV(String filePath) 
+	public static void writeCSV(String cityName, String ID) 
 	{ 
 
 		// first create file object for file placed at location 
-		// specified by filepath 
-		File file = new File(filePath); 
+		// specified by file path 
+		File file = new File("test\\cities.csv"); 
 
 		try { 
 			// create FileWriter object with file as parameter 
 			FileWriter outputfile = new FileWriter(file); 
 
 			// create CSVWriter with '|' as separator 
-			CSVWriter writer = new CSVWriter(outputfile, '|', 
-											CSVWriter.NO_QUOTE_CHARACTER, 
-											CSVWriter.DEFAULT_ESCAPE_CHARACTER, 
-											CSVWriter.DEFAULT_LINE_END); 
+			CSVWriter writer = new CSVWriter(outputfile, '|', CSVWriter.NO_QUOTE_CHARACTER, CSVWriter.DEFAULT_ESCAPE_CHARACTER, CSVWriter.DEFAULT_LINE_END); 
 
 			// create a List which contains String array 
 			ArrayList<String[]> data = new ArrayList<String[]>(); 
-			data.add(new String[] { "Name", "Class", "Marks" }); 
-			data.add(new String[] { "Aman", "10", "620" }); 
-			data.add(new String[] { "Suraj", "10", "630" }); 
+			data.add(new String[] { "Name", "ID"}); 
+			data.add(new String[] { cityName, ID}); 
 			writer.writeAll(data); 
 
 			// closing writer connection 
-			writer.close(); 
+			writer.close();
 		} 
 		catch (IOException e) { 
 			// TODO Auto-generated catch block 

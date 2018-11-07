@@ -4,5 +4,6 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="lib" path="Libraries/jsoup-1.11.3.jar"/>
 	<classpathentry kind="lib" path="Libraries/opencsv-4.3.2.jar"/>
+	<classpathentry kind="lib" path="Libraries/mongodb-driver-3.9.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
