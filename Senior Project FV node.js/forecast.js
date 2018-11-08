@@ -1,23 +1,17 @@
 //this is the node.js port of the java forcast program.
 
-let axios = require('axios');
-let cheerio = require('cheerio');
-let fs = require('fs');
+let noodle = require('noodlejs');
+var query = {
+    url: 'http://google.com/search?q=javascript',
+    type: 'html',
+    selector: 'h3.r a',
+    extract: 'text'
+  },
+  uriQuery = encodeURIComponent(JSON.stringify(query)),
+  request  = 'http://example.noodlejs.com/?q=' +
+             uriQuery + '&callback=?';
 
-axios.get('https://dev.to/aurelkurtula')
-    .then((response) => {
-        if(response.status === 200) {
-            const html = response.data;
-            const $ = cheerio.load(html);
-            let devtoList = [];
-            $('.single-article').each(function(i, elem) {
-                devtoList[i] = {
-                    title: $(this).find('h3').text().trim(),
-                    url: $(this).children('.index-article-link').attr('href'),
-                    tags: $(this).find('.tags').text().split('#')
-                          .map(tag =>tag.trim())
-                          .filter(function(n){ return n != "" })
-                }
-            });
-    }
-}, (error) => console.log(err) );
+// Make Ajax request to Noodle server
+jQuery.getJSON(request, function (data) {
+  alert(data[0].results);
+});
