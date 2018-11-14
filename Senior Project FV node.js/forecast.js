@@ -2,8 +2,10 @@
 
 const request = require('superagent');
 
-var urlToPass = 'http://api.openweathermap.org/data/2.5/weather?q=' + inputName + '&APPID=8ed55356b0c310798b7216c27917e611';
-var inputName = process.argv[2];
+var inputName = process.argv.slice(2);
+var urlToPass = "http://api.openweathermap.org/data/2.5/weather?q=" + inputName + "&APPID=8ed55356b0c310798b7216c27917e611";
+console.log(inputName);
+console.log(urlToPass);
 
 request
   .get(urlToPass) /* hopefully this allows it to use input for the city name */
