@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -16,19 +15,6 @@
   </head>
 
   <body class="text-center">
-    <?php
-      $servername = "localhost";
-      $username = "login-admin";
-      $password = "MTHSP1@3";
-
-      //Create connection
-      $conn = new mysqli($servername, $username, $password);
-
-      if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-      }
-    ?>
-
     <form class="form-signin">
       <img class="mb-4" src="vapor.png" alt="" width="200" height="200">
       <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
