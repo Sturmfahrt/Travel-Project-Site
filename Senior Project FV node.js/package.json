@@ -6,7 +6,7 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
-    "mongodb": "^2.2.16",
+    "mongoose": "^5.3.13",
     "superagent": "^4.0.0-beta.5",
     "yelp-fusion": "^2.2.1"
   },

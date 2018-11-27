@@ -1,7 +1,7 @@
 body{
   font-family: 'Open Sans', sans-serif;
 }
-.container-fluid {
+div.container-fluid {
   padding-top: 70px;
   padding-bottom: 70px;
 }
@@ -27,7 +27,7 @@ div.title-image {
   background-image: url('test-background.jpg');
   background-size: cover;
   color: white;
-  padding-top: 10rem;
+  padding-top: 9rem;
   background-position: center;
 }
 div.title-container {
@@ -42,12 +42,15 @@ div.title-container {
     width: 75%;
   }
 }
+div.container-fluid.div-row {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
 .col img {
   height: auto;
   width: 10rem;
 }
-.title-image {
+img.title-image {
   height: auto;
   width: 15rem;
-  padding-bottom: 2rem;
 }
