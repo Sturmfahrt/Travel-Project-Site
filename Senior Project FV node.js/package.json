@@ -2,18 +2,21 @@
   "name": "floridapi",
   "version": "1.0.0",
   "description": "the core api for the florida view project.",
-  "main": "index.js",
+  "main": "server.js",
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "mongodb": "^2.2.16",
     "readline-sync": "^1.4.9",
+    "mongoose": "^5.3.13",
     "superagent": "^4.0.0-beta.5",
     "yelp-fusion": "^2.2.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "nodemon": "^1.18.6"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon server.js"
   },
   "author": "Max & Ethan",
   "license": "ISC"
