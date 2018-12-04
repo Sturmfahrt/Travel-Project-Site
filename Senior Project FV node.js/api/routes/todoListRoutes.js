@@ -1,4 +1,3 @@
-'use strict';
 module.exports = function(app) {
   var todoList = require('../controllers/todoListController');
   var weather = require('../controllers/weatherController');
@@ -14,6 +13,6 @@ module.exports = function(app) {
     .delete(todoList.delete_a_task);
   
   app.route('/weather')
-    .get(weather.read_weather)
-    .post(weather.set_city_name);
+    .post(weather.set_city_name)
+    .get(weather.read_weather);
 };
