@@ -13,6 +13,5 @@ module.exports = function(app) {
     .delete(todoList.delete_a_task);
   
   app.route('/weather')
-    .post(weather.set_city_name)
     .get(weather.read_weather);
 };

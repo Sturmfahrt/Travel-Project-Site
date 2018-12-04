@@ -9,24 +9,31 @@ var requestError = "requestError test value";
 //console.log(inputName);
 //console.log(urlToPass);
 
-getWeather = new Promise((resolve, reject) => {
+var getWeather = new Promise(async (resolve, reject) => {
   let dataRetreivedSuccessfully = false;
   
+  console.log("request has not yet run");
+
   request
   .get(urlToPass) // hopefully this allows it to use input for the city name
   .end((err, res) => {
-    if(err){requestError = err}
+    if(err){requestError = err; console.log("if statement in request has run");}
     else {
       weatherData = res.body;
       dataRetreivedSuccessfully = true;
+      console.log("else statement in request has run");
     }
   });
 
+  console.log("the request should have been run.");
+
   if(dataRetreivedSuccessfully) {
     resolve(weatherData);
+    console.log("resolved");
   }
   if(!dataRetreivedSuccessfully) {
     reject(requestError);
+    console.log("rejected");
   }
 });
 module.exports = getWeather;
