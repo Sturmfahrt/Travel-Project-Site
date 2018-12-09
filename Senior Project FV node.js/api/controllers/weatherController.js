@@ -1,10 +1,28 @@
-var getWeatherData = require('../../weather/forecast');
-var inputName;
+var rp = require('request-promise');
 
 exports.read_weather = function(req, res) {
-    inputName = req.query.cityName;
-    console.log("inputName before getWeatherData is called: " + inputName);
-    var data = getWeatherData(inputName);
-    console.log("data controller received is: " + data);
-    res.send(data);
+    var inputName = req.query.cityName;
+    var options = {
+        method: 'GET',
+        uri: 'http://api.openweathermap.org/data/2.5/weather',
+        qs: {
+            q: inputName,
+            APPID: '8ed55356b0c310798b7216c27917e611'
+        },
+        headers: {
+            'User-Agent': 'Request-Promise'
+        },
+        json: true // Automatically parses the JSON string in the response
+    };
+    rp(options)
+        .then(function (body) {
+         console.log('data retreived');
+         console.log(body);
+         res.send(body);
+        })
+        .catch(function (err) {
+         console.log('error has occured');
+         console.log(err);
+         res.send(err);
+        });
 };
