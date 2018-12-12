@@ -1,6 +1,8 @@
 module.exports = function(app) {
   var todoList = require('../controllers/todoListController');
   var yelp = require('../controllers/yelpController');
+  var weather = require('../controllers/weatherController');
+
 
   // todoList Routes
   app.route('/tasks')
@@ -14,4 +16,7 @@ module.exports = function(app) {
 
   app.route('/yelp')
     .get(yelp.get_info);
+  
+  app.route('/weather')
+    .get(weather.read_weather);
 };
