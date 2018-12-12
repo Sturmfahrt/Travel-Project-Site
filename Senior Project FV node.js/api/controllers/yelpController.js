@@ -7,7 +7,7 @@ var rp = require('request-promise');
 exports.get_info = function(req, res) {
     term = req.query.term;
     loca = req.query.location;
-    cost = req.query.cost;
+    cost = req.query.price;
 
     var options = {
       method: 'GET',
@@ -15,7 +15,7 @@ exports.get_info = function(req, res) {
       qs: {
           term: term,
           location: loca,
-          cost: cost
+          price: cost
       },
       headers: {
           'User-Agent': 'Request-Promise',
