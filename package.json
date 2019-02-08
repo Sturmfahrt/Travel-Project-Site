@@ -1,0 +1,15 @@
+{
+  "name": "fvnodejs",
+  "version": "0.1.0",
+  "description": "Florida View website except using node js like everything else in the project.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Max & Ethan",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "pug": "^2.0.3"
+  }
+}

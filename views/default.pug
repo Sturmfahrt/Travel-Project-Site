@@ -1,0 +1,57 @@
+doctype html
+html(lang='en')
+  head
+    title Project Home
+    link(rel='icon', href='vapor.png')
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js')
+    link(href='https://fonts.googleapis.com/css?family=Open+Sans', rel='stylesheet')
+    link(rel='stylesheet', href='design.css')
+  body
+    block navandwelcome
+      nav.navbar.navbar-expand-sm.bg-dark.navbar-dark.fixed-top
+        a.navbar-brand(href='index.html')
+          img(src='vapor transparent.png', alt='Logo', style='width:40px;')
+        button.navbar-toggler(type='button', data-toggle='collapse', data-target='#collapsibleNavbar')
+          span.navbar-toggler-icon
+        #collapsibleNavbar.collapse.navbar-collapse
+          ul.navbar-nav.mr-auto
+            li.nav-item.active
+              a.nav-link(href='/') Home
+            li.nav-item
+              a.nav-link(href='/about') About
+            li.nav-item
+              a.nav-link.disabled(href='#') Planner
+          ul.navbar-nav
+            li.nav-item
+              a.nav-link(href='/login') Login
+    block content
+      .container-fluid.title-image
+        .container-fluid.text-center.title-container
+          img.img-fluid.title-image(src='vapor.png')
+          h3 Welcome to Florida View
+          p
+            | Welcome to Florida View. this is your One-Stop-Shop for your vacation to florida. put a breif summary of the application here.  
+      .container-fluid.div-row
+        .row.text-center.bg-dark.text-white
+          .col
+            img.img-fluid.mx-auto.d-block.row-image(src='vapor transparent.png')
+            br
+            | Put a picture and a bit of info here.
+          .col
+            img.img-fluid.mx-auto.d-block.row-image(src='vapor transparent.png')
+            br
+            | Put a picture and a bit of info here.
+          .col
+            img.img-fluid.mx-auto.d-block.row-image(src='vapor transparent.png')
+            br
+            | Put a picture and a bit of info here.
+      .container-fluid.text-center
+        h1 More Content
+        p put more information here. not breif stuff goes here.
+      .jumbotron.text-center.footer(style='margin-bottom:0; width: 100%;')
+        p Note all of this is currently a 
