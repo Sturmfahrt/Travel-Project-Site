@@ -4,7 +4,7 @@ const app = express();
 app.set('view engine', 'pug');
 app.use(express.static(__dirname + '/static'));
 
-const server = app.listen(80, () => {
+const server = app.listen(8080, () => {
     console.log(`Express running → PORT ${server.address().port}`);
   });
 
