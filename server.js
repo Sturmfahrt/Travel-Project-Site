@@ -1,7 +1,10 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const app = express();
 
 app.set('view engine', 'pug');
+app.use(bodyParser.json()); // for parsing application/json
+app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 app.use(express.static(__dirname + '/static'));
 
 const server = app.listen(8080, () => {
@@ -17,3 +20,8 @@ app.get('/about', (req, res) => {
 app.get('/login', (req, res) => {
     res.render('login');
 });
+app.post('/login', (req, res) => {
+    console.log('signin triggered');
+    console.log(JSON.stringify(req.body));
+    res.redirect('/');
+})

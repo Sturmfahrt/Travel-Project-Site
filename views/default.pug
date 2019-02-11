@@ -20,13 +20,14 @@ html
         button.navbar-toggler(type='button', data-toggle='collapse', data-target='#collapsibleNavbar')
           span.navbar-toggler-icon
         #collapsibleNavbar.collapse.navbar-collapse
-          ul.navbar-nav.mr-auto
-            li.nav-item.active
-              a.nav-link(href='/') Home
-            li.nav-item
-              a.nav-link(href='/about') About
-            li.nav-item
-              a.nav-link.disabled(href='#') Planner
+          block navitems
+            ul.navbar-nav.mr-auto
+              li.nav-item.active
+                a.nav-link(href='/') Home
+              li.nav-item
+                a.nav-link(href='/about') About
+              li.nav-item
+                a.nav-link.disabled(href='#') Planner
           ul.navbar-nav
             li.nav-item
               a.nav-link(href='/login') Login

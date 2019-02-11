@@ -1,27 +1,35 @@
 extends default.pug
 block title
   title About us
+block navitems
+  ul.navbar-nav.mr-auto
+    li.nav-item
+      a.nav-link(href='/') Home
+    li.nav-item.active
+      a.nav-link(href='/about') About
+    li.nav-item
+      a.nav-link.disabled(href='#') Planner
 block content
-      .container-fluid.title-image
-        .container-fluid.text-center.title-container
-          img.img-fluid.title-image(src='vapor.png')
-          h3 About us
-      .container-fluid.text-center
-        p put a breif summary of what this is all about.
-      .container-fluid.div-row
-        .row.text-center.bg-dark.text-white
-          .col
-            img.img-fluid.mx-auto.d-block.row-image(src='vapor transparent.png')
-            br
-            | Put a picture and a bit of info here.
-          .col
-            img.img-fluid.mx-auto.d-block.row-image(src='vapor transparent.png')
-            br
-            | Put a picture and a bit of info here.
-          .col
-            img.img-fluid.mx-auto.d-block.row-image(src='vapor transparent.png')
-            br
-            | Put a picture and a bit of info here.
-      .container-fluid.text-center
-        h1 More Content
-        p put more info here. not breif stuff goes here.
+  .container-fluid.title-image
+    .container-fluid.text-center.title-container
+      img.img-fluid.title-image(src='vapor.png')
+      h3 About us
+  .container-fluid.text-center
+    p put a breif summary of what this is all about.
+  .container-fluid.div-row
+    .row.text-center.bg-dark.text-white
+      .col
+        img.img-fluid.mx-auto.d-block.row-image(src='vapor transparent.png')
+        br
+        | Put a picture and a bit of info here.
+      .col
+        img.img-fluid.mx-auto.d-block.row-image(src='vapor transparent.png')
+        br
+        | Put a picture and a bit of info here.
+      .col
+        img.img-fluid.mx-auto.d-block.row-image(src='vapor transparent.png')
+        br
+        | Put a picture and a bit of info here.
+  .container-fluid.text-center
+    h1 More Content
+    p put more info here. not breif stuff goes here.
