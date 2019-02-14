@@ -62,7 +62,7 @@ app.get('/logout', (req, res, next) => {
         });
     }
 });
-app.post('/login', (req, res) => {
+app.post('/login', (req, res, next) => {
     console.log('signin triggered');
     console.log(JSON.stringify(req.body));
     
