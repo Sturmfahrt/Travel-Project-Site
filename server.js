@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x
 app.use(express.static(__dirname + '/static')); // allows access to static files like images and css
 //use sessions for tracking logins
 app.use(session({
-    secret: 'work hard',
+    secret: 'SLAV305',
     resave: true,
     saveUninitialized: false
 }));

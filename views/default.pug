@@ -32,7 +32,8 @@ html
             li.nav-item.dropdown
               a#navbarDropdown.nav-link.dropdown-toggle(href='/login', role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false') User
               .dropdown-menu(aria-labelledby='navbarDropdown')
-                a.dropdown-item(href='/profile') Profile
+                a#signup.dropdown-item(href='/signup') Signup
+                a#profile.d-none.dropdown-item(href='/profile') Profile
                 .dropdown-divider
                 a#loginout.dropdown-item(href='/login') Login
     script.
@@ -43,8 +44,13 @@ html
       if (this.readyState == 4 && this.status == 200) {
       console.log(this.responseText);
       if (this.responseText != "User") {
-      document.getElementById("loginout").href = "/logout";
-      document.getElementById("loginout").innerHTML = "Logout";
+      var loginout = document.getElementById("loginout");
+      var signup = document.getElementById("signup");
+      var profile = document.getElementById("profile");
+      loginout.href = "/logout";
+      loginout.innerHTML = "Logout";
+      signup.classList.add("d-none");
+      profile.classList.remove("d-none");
       }
       document.getElementById("navbarDropdown").innerHTML = this.responseText;
       }
