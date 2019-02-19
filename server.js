@@ -62,6 +62,20 @@ app.get('/logout', (req, res, next) => {
         });
     }
 });
+app.get('/getUsername', (req, res, next) => {
+    User.findById(req.session.userId)
+        .exec(function (error, user) {
+            if (error) {
+                return next(error);
+            } else {
+                if (user === null) {
+                    return res.send('User');
+                } else {
+                    return res.send(user.username);
+                }
+            }
+        });
+});
 app.post('/login', (req, res, next) => {
     console.log('signin triggered');
     console.log(JSON.stringify(req.body));

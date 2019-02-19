@@ -12,7 +12,7 @@ html
       script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js')
       link(href='https://fonts.googleapis.com/css?family=Open+Sans', rel='stylesheet')
       link(rel='stylesheet', href='design.css')
-  body
+  body(onload="loadUsername()")
     block navandwelcome
       nav.navbar.navbar-expand-sm.bg-dark.navbar-dark.fixed-top
         a.navbar-brand(href='/')
@@ -29,8 +29,30 @@ html
               li.nav-item
                 a.nav-link.disabled(href='#') Planner
           ul.navbar-nav
-            li.nav-item
-              a.nav-link(href='/login') Login
+            li.nav-item.dropdown
+              a#navbarDropdown.nav-link.dropdown-toggle(href='/login', role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false') User
+              .dropdown-menu(aria-labelledby='navbarDropdown')
+                a.dropdown-item(href='/profile') Profile
+                .dropdown-divider
+                a#loginout.dropdown-item(href='/login') Login
+    script.
+      function loadUsername() {
+      console.log("loadUsername function has been called");
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+      console.log(this.responseText);
+      if (this.responseText != "User") {
+      document.getElementById("loginout").href = "/logout";
+      document.getElementById("loginout").innerHTML = "Logout";
+      }
+      document.getElementById("navbarDropdown").innerHTML = this.responseText;
+      }
+      };
+      xhttp.open("GET", "/getUsername", true);
+      xhttp.send();
+      console.log("username should have been updated");
+      }
     block content
 
     block footer
