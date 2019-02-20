@@ -1,0 +1,17 @@
+extends default.pug
+
+block title
+    title profile
+block content
+    .container-fluid.title-image
+        .container-fluid.text-center.title-container
+            img.img-fluid.title-image(src='vapor.png')
+            h3 
+            p
+                | This is your profile information.
+    .container-fluid.text-center
+        .card(style='width: 20rem;').mx-auto
+            ul.list-group.list-group-flush
+                li.list-group-item= "Username: " + user_username
+                li.list-group-item= "Email: " + user_email
+
